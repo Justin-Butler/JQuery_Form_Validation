@@ -784,5 +784,9 @@ body {
     grid-template-columns: 100px repeat(2, 1fr);
     grid-gap: 10px;
   }
+  /*Registration Page*/
+  #tandcValid {
+    margin-left: -30px;
+  }
 }
 /**/
