@@ -17,11 +17,11 @@ function emailTest(email) {
 //Function to test if Password meets criteria
 //
 function passTest(pass) {
-  var pParam = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:@])([^\s]){8,16}$/;
+  var pParam = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
   var isGood = pParam.test(pass);
   if (!isGood) {
-    noErrors = false;
     $('#pWordError').css("display","block");
+    noErrors = false;
   }
   else {
     $('#pWordError').css("display","none");
@@ -30,11 +30,11 @@ function passTest(pass) {
 //
 //Function to check if two fields are the same (Password & Password Confirm or Email & Email confirm)
 //
-function isSame(string1, string2) {
+function isSame(string1, string2, ref) {
   //Will end run if No Errors flag is False
   if (noErrors) {
     //if Strings are Email Addresses
-    if(string1.search('@') != -1) {
+    if(ref === 1) {
       //Convert Case to Lowercase (as case does not matter for email addresses)
       var email1 = string1.toLowerCase();
       var email2 = string2.toLowerCase();
@@ -57,7 +57,7 @@ function isSame(string1, string2) {
       //if Passwords don't match
       else {
         noErrors = false;
-        $('#pWordCError').css("display", "none");
+        $('#pWordCError').css("display", "block");
       }
     }
   }
@@ -181,16 +181,18 @@ $('#submit').click(function(event){
   //Check if Email is Valid
   emailTest($('#emailInput').val());
   //Check if Email Confirmation field matches
-  isSame($('#emailInput').val(), $('#emailcInput').val());
+  isSame($('#emailInput').val(), $('#emailcInput').val(), 1);
   //Password Rule Test
   passTest($('#password').val());
   //Check if Password Confirm field matches
-  isSame($('#password').val(), $('#cpassword').val());
+  isSame($('#password').val(), $('#cpassword').val(), 2);
   //Required Names field checked
   fieldFilled($('#first_name').val(), 1);
   fieldFilled($('#last_name').val(), 2);
   //Security Answer Check
   fieldFilled($('#security_Ans').val(), 3);
+  //Remove white spaces after strings
+  
   //Check if Terms and Conditions are accepted
   termAndCondChecker($('#tandcBox').prop("checked"));
   //Check if noErrors is still true
