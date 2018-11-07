@@ -17,6 +17,8 @@ Will check the confirmation field and make sure the case matches.
 
 First and Last Name fields must be completed. It will auto-capitalize the first character of both fields as well as the middle initial. It will also require more than one character to be entered into the field for First Name, Last Name, and Security answer.
 
+The date of births will display the correct days of the month dependent on the month and the year
+
 The final check it will make is to make sure the terms and conditions checkbox is checked off prior to sending.
 
 The remaining Validation and Security will have to be handled server-side.
