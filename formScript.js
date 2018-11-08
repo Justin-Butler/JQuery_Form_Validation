@@ -93,6 +93,32 @@ function fieldFilled(input, ref) {
     }
   }
 }
+//
+//
+//
+function dobChecker(val, index) {
+  if (val === null) {
+    noErrors = false;
+    //Unpopulated Month Field
+    if (index === 1) {
+      $('#monthError').css("display", "block");
+    }
+    //Unpopulated Year Field
+    else {
+      $('#yearError').css("display", "block");
+    }
+  }
+  else {
+    //Populated Month Field
+    if (index === 1) {
+      $('#monthError').css("display", "none");
+    }
+    //Populated Year Field
+    else {
+      $('#yearError').css("display", "none");
+    }
+  }
+}
 function termAndCondChecker(arg) {
   //If Not Checked
   if (!arg) {
@@ -106,6 +132,7 @@ function termAndCondChecker(arg) {
 
 //Global Variables 
 var noErrors;
+var leapYear;
 
 //
 //Event Listeners
@@ -245,8 +272,9 @@ $('#submit').click(function(event){
   fieldFilled($('#last_name').val(), 2);
   //Security Answer Check
   fieldFilled($('#security_Ans').val(), 3);
-  //Remove white spaces after strings
-  
+  //Date of Birth Check
+  dobChecker($('#month_Birth').val(), 1);
+  dobChecker($('#year_Birth').val(), 2);
   //Check if Terms and Conditions are accepted
   termAndCondChecker($('#tandcBox').prop("checked"));
   //Check if noErrors is still true
