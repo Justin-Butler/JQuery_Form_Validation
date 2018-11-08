@@ -280,7 +280,7 @@ body {
   padding: 10px;
   border: 1px solid red;
 }
-#emailFError, #emailFCError, #pWordError, #pWordCError, #fNameError, #lNameError, #securityAnsError, #tandcValid {
+#emailFError, #emailFCError, #pWordError, #pWordCError, #fNameError, #lNameError, #securityAnsError, #tandcValid, #monthError, #yearError {
   display: none;
 }
 #tandcValid {
