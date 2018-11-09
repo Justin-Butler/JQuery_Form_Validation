@@ -220,6 +220,7 @@ $('#month_Birth').on('change', function() {
   else if (leapYear === true) {
     $('#day_Birth option[value="31"]').remove();
     $('#day_Birth option[value="30"]').remove();
+    $('#day_Birth').append('<option value="29">29</option>');
   }
   else {
     $('#day_Birth option[value="31"]').remove();
