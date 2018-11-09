@@ -1,6 +1,6 @@
 //Functions
 //
-//Function to test if email is valid
+//Function to test if email submitted is a valid address.
 //
 function emailTest(email) {
   var eParam = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,6})+$/;
@@ -94,7 +94,7 @@ function fieldFilled(input, ref) {
   }
 }
 //
-//
+//Function dobChecker is intended to ensure that the Month and Year are selected for the date of birth.
 //
 function dobChecker(val, index) {
   if (val === null) {
@@ -142,7 +142,7 @@ $('#first_name').on('input', function(){
   var alpha = /([^a-zA-Z- ])|( {2,})/g;
   var current = $(this).val();
   var capitalize = /[^A-Z]/g;
-  //Checking to make sure all characters are Alphabetic
+  //Checking to make sure all characters are Alphabetic will delete any invalid characters. Hyphens and one space is allowed in between letters.
   if (alpha.test(current)) {
     current = current.replace(alpha, "");
     $(this).val(current);
@@ -171,7 +171,7 @@ $('#middle_initial').on('input', function(){
     current = current.replace(nonAlpha, "");
     $(this).val(current);
   }
-  //Capitalize the Middle Initial
+  //Auto-capitalize the Middle Initial
   else if (capitalize.test(current[0])) {
     current = current.replace(current[0], current[0].toUpperCase());
     $(this).val(current);
@@ -182,7 +182,7 @@ $('#last_name').on('input', function(){
   var alpha = /([^a-zA-Z- ])|( {2,})/g;
   var current = $(this).val();
   var capitalize = /[^A-Z]/g;
-  //Checking to make sure all characters are Alphabetic
+  //Checking to make sure all characters are Alphabetic will delete any invalid characters. Hyphens and one space is allowed in between letters.
   if (alpha.test(current)) {
     current = current.replace(alpha, "");
     $(this).val(current);
@@ -193,6 +193,7 @@ $('#last_name').on('input', function(){
     $(this).val(current);
   }
 });
+//Security Answer Field Check. Purpose is to ensure that the field is populated with an answer.
 $('#security_Ans').on('input', function() {
   var alpha = /([^a-zA-Z- ])|( {2,})/g;
   var current = $(this).val();
