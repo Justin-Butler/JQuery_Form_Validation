@@ -22,3 +22,6 @@ The date of births will display the correct days of the month dependent on the m
 The final check it will make is to make sure the terms and conditions checkbox is checked off prior to sending.
 
 The remaining Validation and Security will have to be handled server-side.
+
+Webpage Link: https://justin-butler.github.io/JS_Form_Validation/
+Portfolio Link: https://justin-butler.github.io/Portfolio/
