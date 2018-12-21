@@ -1,4 +1,4 @@
-# JS_Form_Validation
+# JQuery_Form_Validation
 Form Validation using Javascript/Jquery
 
 The intention of this verification is to make is easier for the user to fix the issues prior to having the form submit. The form will not submit if the information does not meet the proper criteria.
